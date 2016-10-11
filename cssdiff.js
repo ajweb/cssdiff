@@ -105,7 +105,7 @@ function sameImage(image_a, image_b, cb) {
 }
 
 function writeTestFile(name, html, css) {
-  var d = jsdom.html(html);
+  var d = jsdom.jsdom(html);
   var stripem = 'style, iframe, object, embed, link, script, noscript';
   [].slice.call(d.querySelectorAll(stripem)).forEach(function(node) {
     if (node.parentNode) {
